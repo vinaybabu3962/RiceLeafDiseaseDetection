@@ -3,6 +3,7 @@ Flask==1.1.2
 flask-ngrok==0.0.25
 gunicorn==20.1.0
 h5py==3.1.0
+keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
 numpy==1.19.5
 oauthlib==3.1.1
