@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RICE LEAF DISEASE DETECTION</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/first.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="one">
+        <p>A WEB APPLICATION FOR DETECTING RICE LEAF DISEASES</p>
+
+    </div>
+    <div id="two">
+        <div id="two_1" style="float:left;">
+            <form action="{{ url_for('predictLeaf') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" class="btn btn-outline-primary" id="img" onchange="updateFilename(this.value)" name="image" accept="image/*" />
+                <br><br>
+                <input type="submit" class="btn btn-info" value="SUBMIT" />
+            </form>
+        </div>
+        <div id="two_2" style="float:right;">
+            {% if one==1 %}
+            <b>{{ uploaded_img }}</b>
+            <img src="{{ insertimage }}" class="img-thumbnail" />
+            <b>{{ predicted_as }} {{ predict_ans }}</b>
+            <br>
+            <b>{{solution_text}}</b> {{solution}} {% endif %}
+        </div>
+    </div>
+    <div id="three" style="background-color: aqua;height:300px;border:2px solid red;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2.4 vin"><b>BACTERIAL LEAF BLIGHT</b><br>
+
+                    <img src="{{ url_for('static',filename='bacterialleafblight.jpg') }}" />
+                </div>
+                <div class="col-lg-2.4 vin">
+                    <b>BROWNSPOT</b>
+                    <br>
+                    <img src="{{ url_for('static',filename='brownspot.jpg') }}" />
+                </div>
+                <div class="col-lg-2.4 vin ">
+                    <b>BLAST</b>
+                    <br>
+                    <img src="{{ url_for('static',filename='blast.jpg') }}" />
+                </div>
+                <div class="col-lg-2.4 vin">
+                    <b>SHEATH BLIGHT</b>
+                    <br>
+                    <img src="{{ url_for('static',filename='sheathblight.jpg') }}" />
+                </div>
+                <div class="col-lg-2.4 vin">
+                    <b>TUNGRO</b>
+                    <br>
+                    <img src="{{ url_for('static',filename='tungro.jpg') }}" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
