@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,flash
 from werkzeug.utils import secure_filename
 from keras.models import load_model
 import cv2
-import tensorflow
+
 import os
 app = Flask(__name__)
 diseases=['blast', 'blight', 'Brownspot', 'sheath_blight', 'tungro']
